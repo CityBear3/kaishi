@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	"google.golang.org/grpc"
+	"google.golang.org/grpc/reflection"
 	proto "kaishi"
 	"log"
 	"net"
@@ -33,6 +34,7 @@ func main() {
 
 	proto.RegisterGreetServiceServer(server, &Server{})
 
+	reflection.Register(server)
 	if e := server.Serve(listen); e != nil {
 		log.Fatalln(e)
 	}
