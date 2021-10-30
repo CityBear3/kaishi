@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option go_package = "kaishi/proto";
+
+package proto;
+
+service GreetService {
+  rpc Order (GreetRequest) returns (GreetResponse) {}
+}
+
+message GreetRequest {
+  string name = 1;
+}
+
+message GreetResponse {
+  string greet = 1;
+}
