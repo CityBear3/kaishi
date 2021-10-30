@@ -5,7 +5,7 @@ option go_package = "kaishi/proto";
 package proto;
 
 service GreetService {
-  rpc Order (GreetRequest) returns (GreetResponse) {}
+  rpc Greet (GreetRequest) returns (GreetResponse) {}
 }
 
 message GreetRequest {
